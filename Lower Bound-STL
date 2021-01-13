@@ -1,0 +1,29 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int n,q,a,w;
+    cin>>n;
+    vector<int> arr;
+    while(n--){
+        cin>>a;
+        arr.push_back(a);
+    } 
+    cin>>q;
+    while(q--){
+        cin>>w;
+        vector<int>::iterator r = lower_bound(arr.begin(), arr.end(), w);
+        if(arr[(r-arr.begin())]==w){
+            cout<<"Yes "<<(r-arr.begin()+1)<<endl;
+        }
+        else{
+            cout<<"No "<<(r-arr.begin()+1)<<endl;
+        }
+    }
+    return 0;
+}
