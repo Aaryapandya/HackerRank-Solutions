@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
+    stack<int> s,t;
+    int n, m=0;
+    cin>>n;
+    while(n--){
+        int i;
+        cin>>i;
+        switch (i) {
+            case 1:int q;
+                   cin>>q;
+                   s.push(q);
+                   if(t.empty()){
+                       t.push(q);
+                   }
+                   else if(q>=t.top()){
+                       t.push(q);
+                   }
+                   break;
+            case 2:if(s.top()==t.top()){
+                      t.pop();
+                   }
+                   s.pop();
+                   break;
+            case 3:cout<<t.top()<<endl;
+                   break;
+        }
+    }
+    return 0;
+}
