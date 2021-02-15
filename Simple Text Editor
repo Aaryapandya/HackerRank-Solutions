@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    long int ch, q, k;
+    stack<string> s;
+    string w,tmp;
+    cin>>q;
+    while(q--){
+        cin>>ch;
+        switch(ch){
+            case 1: cin>>w;
+                    if(s.empty()){
+                        s.push(w);
+                    }
+                    else{
+                        tmp = s.top()+w;
+                        s.push(tmp);
+                    }
+                    break;
+            case 2: cin>>k;
+                    tmp = s.top();
+                    tmp.resize(tmp.length()-k);
+                    s.push(tmp);
+                    break;
+            case 3: cin>>k;
+                    tmp = s.top();
+                    cout<<tmp[k-1]<<endl;
+                    break;
+            case 4: s.pop();
+                    break;                    
+        }
+    }  
+    return 0;
+}
