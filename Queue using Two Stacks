@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    int t, ch, x; 
+    queue<int> q;
+    cin>>t;
+    while(t--){
+        cin>>ch;
+        switch(ch){
+            case 1: cin>>x;
+                    q.push(x);
+                    break;
+            case 2: q.pop();
+                    break;
+            case 3: cout<<q.front()<<endl;
+                    break;
+        }
+    }
+    return 0;
+}
